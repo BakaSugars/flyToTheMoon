@@ -29,6 +29,7 @@ export class Button extends EventEmitter {
         button.style.height = `${BUTTON_SIZE}px`;
         button.style.width = `${BUTTON_SIZE}px`;
         button.style.userSelect = 'none';
+        button.style.borderRadius = '10px';
         this._container.appendChild(button);
     }
 
@@ -42,6 +43,7 @@ export class Button extends EventEmitter {
                 loop();
             });
         };
+        
         this._container.onmousedown = () => {
             if (this._onLoop) {
                 return;

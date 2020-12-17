@@ -40,6 +40,17 @@
             text-align: center;
         }
 
+        #startPage {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: rgba(221, 219, 219, 0.8);
+            top: 0;
+            left: 0;
+            color: 'white';
+            text-align: center;
+        }
+
         .custom {
             position: absolute;
             left: 0;
@@ -54,6 +65,7 @@
 <body>
     <div id="container" tabindex="0"></div>
     <div id="mask"></div>
+    <div id="startPage"></div>
     <div id="ui"></div>
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
         <script type="text/javascript" crossorigin="anonymous" src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>

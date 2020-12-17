@@ -3,17 +3,20 @@ import { Mask } from "./mask";
 import { ControlManager } from "./controlManager";
 import { Rocket } from "../game/rocket";
 import Point from "../utils/point";
+import { StartPage } from "./startPage";
 
 export class UiManager extends EventEmitter {
     private _container: HTMLDivElement;
     private _mask: Mask;
     private _controlManager: ControlManager;
     private _ended = false;
+    private _startPage: StartPage;
     constructor(container: HTMLDivElement) {
         super();
         this._container = container;
         this._mask = new Mask();
         this._controlManager = new ControlManager(container);
+        this._startPage = new StartPage();
     }
 
     public get controlManager() {

@@ -14,4 +14,8 @@ export class Stone extends BaseElement {
     public set speed(d: Point) {
         this._speed = d;
     }
+
+    public get speed() {
+        return this._speed;
+    }
 }

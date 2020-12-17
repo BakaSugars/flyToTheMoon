@@ -1,9 +1,10 @@
 import EventEmitter from "../utils/eventEmitter";
 import { MoveControl } from "./moveControl";
 import { BaseElement } from "../game/baseElement";
-import { EventName } from "../utils/constant";
+import { EventName, Command } from "../utils/constant";
 import { getId } from "../utils/util";
 import Event from "../utils/event";
+import { Keyboard } from "./keyboard";
 
 export class ControlManager extends EventEmitter {
     private _container: HTMLDivElement
@@ -11,10 +12,13 @@ export class ControlManager extends EventEmitter {
     private _commandArray: string[] = [];
     private _frameId: number;
     private _connectedObj: BaseElement;
+    private _keyboard: Keyboard;
     constructor(container: HTMLDivElement) {
         super();
         this._container = container;
         this._initControls();
+        this._keyboard = new Keyboard();
+        this._keyboard.setParent(this);
         this.onPushCommand = this.onPushCommand.bind(this);
     }
 

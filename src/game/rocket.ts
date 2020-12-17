@@ -5,10 +5,12 @@ import Event from "../utils/event";
 import Point from "../utils/point";
 import { getId } from "../utils/util";
 import { CollisionCircle } from "./collisionCircle";
+import { Stone } from "./stone";
 
 const SpeedAdd = 0.01;
 const SpeedSlow = 0.02;
 const RotateSpeed = 2;
+const addSpeedK = 4
 
 export class Rocket extends BaseElement {
     private _speed = new Point(0, 0);
@@ -21,12 +23,8 @@ export class Rocket extends BaseElement {
             const commandArray = e.data;
             commandArray.forEach((command: string) => {
                 if (command === Command.ACC) {
-                    const nowSpeed = this._speed.mag();
-                    if (nowSpeed) {
-                        this._speed = this._speed.add(this._speed.clone().unit().mult(SpeedAdd));
-                    } else {
-                        this._speed = this._speed.add(new Point(0, SpeedAdd));
-                    }
+                    const unit = (new Point(0, 1)).rotate(-this.angle * Math.PI / 180).mult(SpeedAdd);
+                    this._speed = this._speed.add(unit);
                 }
                 if (command === Command.SLOW) {
                     const nowSpeed = this._speed.mag();
@@ -53,6 +51,12 @@ export class Rocket extends BaseElement {
             this._starCount ++;
         });
         this.on(EventName.COLLID_STONE, (e) => {
+            const stone = e.data as Stone;
+            const stoneSize = stone.width * stone.height;
+            const rocketSize = this.width * this.height;
+            const rocketExralSpeed = stone.speed.clone().mult(stoneSize / rocketSize * addSpeedK);
+            this._speed = this._speed.add(rocketExralSpeed);
+
             this._collisionTime ++;
         });
     }

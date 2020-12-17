@@ -14,6 +14,7 @@ const space = 500;
 const speedMin = 0.1;
 const speedMax = 2;
 
+
 export class StoneManager extends BaseManager {
     private _scene: Scene;
     constructor(scene: Scene) {
