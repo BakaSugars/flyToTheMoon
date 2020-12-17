@@ -10,15 +10,15 @@ export class StartPage {
     private _init() {
         const image = document.createElement('img');
         image.src = logoUrl;
-        image.style.width = '425px';
-        image.style.height = '295ps';
-        image.style.marginTop = '100px';
+        image.style.width = '319px';
+        image.style.height = '200ps';
+        image.style.marginTop = '60px';
         this._container.appendChild(image);
 
         const startButton = document.createElement('div');
         startButton.style.margin = '0 auto';
         startButton.style.marginTop = '20px';
-        startButton.style.width = '300px';
+        startButton.style.width = '200px';
         startButton.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
         startButton.style.borderRadius = '10px';
         startButton.style.fontSize = '30px';
@@ -32,7 +32,7 @@ export class StartPage {
         const infoButton = document.createElement('div');
         infoButton.style.margin = '0 auto';
         infoButton.style.marginTop = '20px';
-        infoButton.style.width = '300px';
+        infoButton.style.width = '200px';
         infoButton.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
         infoButton.style.borderRadius = '10px';
         infoButton.style.fontSize = '30px';
@@ -44,7 +44,7 @@ export class StartPage {
         this._info = info;
         info.style.margin = '0 auto';
         info.style.marginTop = '20px';
-        info.style.width = '500px';
+        info.style.width = '360px';
         info.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
         info.style.borderRadius = '10px';
         info.style.fontSize = '30px';

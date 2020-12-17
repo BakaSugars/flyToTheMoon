@@ -10,7 +10,7 @@ import { Stone } from "./stone";
 const SpeedAdd = 0.01;
 const SpeedSlow = 0.02;
 const RotateSpeed = 2;
-const addSpeedK = 4
+const addSpeedK = 2;
 
 export class Rocket extends BaseElement {
     private _speed = new Point(0, 0);
