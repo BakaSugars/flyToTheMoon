@@ -8,7 +8,7 @@ var config = merge(base, {
     mode: 'production',
     devtool: false,
     output: {
-        path: path.resolve("./dist"),
+        path: path.resolve("./docs"),
         filename: "[name].min.js",
         sourceMapFilename: "[file].map",
     },
