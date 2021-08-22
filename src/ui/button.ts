@@ -28,7 +28,6 @@ export class Button extends EventEmitter {
         button.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'
         button.style.height = `${BUTTON_SIZE}px`;
         button.style.width = `${BUTTON_SIZE}px`;
-        button.style.userSelect = 'none';
         button.style.borderRadius = '10px';
         this._container.appendChild(button);
     }
